@@ -1,12 +1,3 @@
-# React Tag Input 
+# React Tags Input 
 
-A simple customizable react tag input
-
-## Installation
-
-```
-
-npm install invite-tag-input
-
-
-```
+A simple react tag input component that is deployable to the npm registry.
