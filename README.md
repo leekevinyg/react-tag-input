@@ -1,3 +1,3 @@
-# React Tag Input 
+# React Tags Input 
 
 A simple react tag input component that is deployable to the npm registry.
