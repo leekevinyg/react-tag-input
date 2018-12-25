@@ -1,6 +1,7 @@
 {
-  "name": "react-tag-input",
+  "name": "react-tags-input",
   "version": "0.1.0",
+  "homepage": "http://leekevinyg.github.io/react-tags-input",
   "main": "dist/index.js",
   "module": "dist/index.js",
   "files": [
@@ -8,6 +9,7 @@
   ],
   "devDependencies": {
     "babel-cli": "^6.26.0",
+    "gh-pages": "^2.0.1",
     "react": "^16.3.2",
     "react-dom": "^16.3.2",
     "react-scripts": "1.1.4",
@@ -22,7 +24,9 @@
     "build-examples": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
-    "build": "rm -rf dist && NODE_ENV=production babel src/lib --out-dir dist --copy-files --ignore __tests__,spec.js,test.js,__snapshots__"
+    "build": "rm -rf dist && NODE_ENV=production babel src/lib --out-dir dist --copy-files --ignore __tests__,spec.js,test.js,__snapshots__",
+    "predeploy": "npm run build-examples",
+    "deploy": "gh-pages -d build"
   },
   "dependencies": {
     "prop-types": "^15.6.2",
