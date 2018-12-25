@@ -9,4 +9,4 @@ To start up a dev env that runs the examples:
 
 To build the examples run: ``` npm run build-examples ```
 
-To build for an npm registry run: ``` npm run build ```. Contents in src/lib will be what is outputted to the dist folder. The contents in dist can then be published to a npm registry.
+To build for a npm registry run: ``` npm run build ```. Contents in src/lib will be what is outputted to the dist folder. The contents in dist can then be published to a npm registry.
