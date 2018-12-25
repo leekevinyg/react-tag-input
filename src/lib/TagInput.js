@@ -11,24 +11,28 @@ class TagInput extends Component {
             selectedTags: [],
         }
         this.renderTags = this.renderTags.bind(this);
-        this.onInputKeyup = this.onInputKeyup.bind(this);
+        this.onInputKeyUp = this.onInputKeyUp.bind(this);
+        this.onInputKeyDown = this.onInputKeyDown.bind(this);
         this.onWrapperClick = this.onWrapperClick.bind(this);
         this.input = React.createRef();
     }
 
     componentDidMount () {
-        this.input.addEventListener('keyup', this.onInputKeyup);
+        this.input.addEventListener('keyup', this.onInputKeyUp);
+        this.input.addEventListener('keydown', this.onInputKeyDown);
+
     }
 
     componentWillUnmount () {
-        this.input.removeEventListener('keyup', this.onInputKeyup);
+        this.input.removeEventListener('keyup', this.onInputKeyUp);
+        this.input.removeEventListener('keydown', this.onInputKeyDown);
     }
 
     clearInput () {
         this.input.value = '';
     }
 
-    onInputKeyup (e) {
+    onInputKeyUp (e) {
         if (e.key === 'Enter') {
             this.setState((state) => ({
                 selectedTags: [
@@ -36,7 +40,11 @@ class TagInput extends Component {
                     e.target.value,
                 ]
             }), () => this.clearInput());
-        } else if (e.key === 'Backspace') {
+        }
+    }
+
+    onInputKeyDown (e) {
+        if (e.key === 'Backspace' && e.target.selectionStart === 0) {
             this.setState((state) => ({
                 selectedTags: state.selectedTags.splice(0, state.selectedTags.length - 1),
             }));
@@ -45,7 +53,8 @@ class TagInput extends Component {
 
     renderTags () {
         const { selectedTags } = this.state;
-        return selectedTags.length > 0 ? selectedTags.map(tag => <Tag key={tag}>{tag}</Tag>) : null;
+        return selectedTags.length > 0 ? selectedTags.map((tag, index) => 
+            <Tag key={index}>{tag}</Tag>) : null;
     }
 
     focusInput () {
