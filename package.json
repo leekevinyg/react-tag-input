@@ -1,7 +1,7 @@
 {
   "name": "react-tags-input",
   "version": "0.1.0",
-  "homepage": "http://leekevinyg.github.io/react-tags-input",
+  "homepage": "http://leekevinyg.github.io/react-tag-input",
   "main": "dist/index.js",
   "module": "dist/index.js",
   "files": [
