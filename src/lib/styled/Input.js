@@ -8,7 +8,7 @@ const Input = styled.input`
   font-size: large;
   display: inline-block;
   width: 100%;
-  font-weight: 300;
+  font-weight: 400;
   color: gray;
   &::-webkit-input-placeholder {
     font-weight: 100;
