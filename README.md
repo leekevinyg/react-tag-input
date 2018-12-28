@@ -19,7 +19,7 @@ To build for a npm registry run: ``` npm run build ```. When this command is run
 
 This is a customizable component. It exposes the following props:
 
-* wrapperStyle
+* **wrapperStyle**
 
 A js template string to be used to override the default wrapper styles. The example below will override the wrapper ```background``` and disable the default ```box-shadow```. The template string can be anything that you would normally pass down as a [styled-component](https://www.styled-components.com/docs/basics#getting-started "Styled Component") configuration.
 
@@ -31,7 +31,7 @@ A js template string to be used to override the default wrapper styles. The exam
 
 ```
 
-* inputStyle
+* **inputStyle**
 
 A js template string to be used to override the default input styles. The example below will override the input ```background``` color and override the placeholder text styling in webkit based browsers. The template string can be anything that you would normally pass down as a [styled-component](https://www.styled-components.com/docs/basics#getting-started "Styled Component") configuration.
 
@@ -47,7 +47,7 @@ A js template string to be used to override the default input styles. The exampl
 
 ```
 
-* tagStyle
+* **tagStyle**
 
 A js template string to be used to override the default tag styles. The example below will override the tag ```background``` color. The template string can be anything that you would normally pass down as a [styled-component](https://www.styled-components.com/docs/basics#getting-started "Styled Component") configuration.
 
