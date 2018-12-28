@@ -39,9 +39,9 @@ A js template string to be used to override the default input styles. The exampl
   <TagInput inputStyle={`
     background: red;
     &::-webkit-input-placeholder {
-        font-weight: 600;
-        font-style: bold;
-        color: black;
+      font-weight: 600;
+      font-style: bold;
+      color: black;
     }
   `}/>
 
