@@ -42,3 +42,14 @@ A js template string to be used to override the default input styles. The exampl
   `}/>
 
 ```
+
+* tagStyle
+
+A js template string to be used to override the default tag styles. The example below will override the tag ```background``` color. The template string can be anything that you would normally pass down as a [styled-component](https://www.styled-components.com/docs/basics#getting-started "Styled Component") configuration.
+
+```
+  <TagInput tagStyle={`
+    background: red;
+  `}/>
+
+```
