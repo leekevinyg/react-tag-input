@@ -1,3 +1,7 @@
+# Demo
+
+https://leekevinyg.github.io/react-tag-input/.
+
 # React Tag Input 
 
 A simple (but fully customizable) react tag input component built using styled components that is suitable for deployment to a npm registry.
