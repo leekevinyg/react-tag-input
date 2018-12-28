@@ -4,20 +4,28 @@ https://leekevinyg.github.io/react-tag-input/.
 
 # React Tag Input 
 
-A simple (but fully customizable) react tag input component built using styled components that is suitable for deployment to a npm registry.
+A simple (but fully customizable) react tag input component built using styled components that is suitable for deployment to an npm registry.
 
 To start up a dev env that runs the example react app utilizing the component: 
 
-1) ``` npm install ``` 
-2) ``` npm start ```
+* ``` npm install ``` 
+* ``` npm start ```
 
-To build the example app, run: ``` npm run build-examples ```. The output of this command is what is running at https://leekevinyg.github.io/react-tag-input/.
+To build the example app: 
 
-To build for a npm registry run: ``` npm run build ```. When this command is run, contents in the ```src/lib``` will be bundled and outputted to the ```dist``` folder, which can in turn, be published to a npm registry.
+* ``` npm run build-examples ``` 
+
+The output of the above command is what is running at https://leekevinyg.github.io/react-tag-input/.
+
+To build for an npm registry: 
+
+* ``` npm run build ```. 
+
+When this command is run, contents in the ```src/lib``` will be bundled and outputted to the ```dist``` folder. This folder can then be deployed to an npm registry of your choice.
 
 # Component Interface
 
-This is a customizable component. It exposes the following props:
+This component exposes the following props to allow for customization:
 
 * **wrapperStyle**
 
