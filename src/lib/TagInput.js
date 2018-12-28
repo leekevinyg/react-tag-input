@@ -20,7 +20,6 @@ class TagInput extends Component {
     componentDidMount () {
         this.input.addEventListener('keyup', this.onInputKeyUp);
         this.input.addEventListener('keydown', this.onInputKeyDown);
-
     }
 
     componentWillUnmount () {
@@ -33,7 +32,8 @@ class TagInput extends Component {
     }
 
     onInputKeyUp (e) {
-        if (e.key === 'Enter') {
+        const inputValue = e.target.value;
+        if (e.key === 'Enter' && inputValue && inputValue.trim() !== '') {
             this.setState((state) => ({
                 selectedTags: [
                     ...state.selectedTags,
@@ -82,12 +82,11 @@ class TagInput extends Component {
 }
 
 TagInput.propTypes = {
-    listItems: PropTypes.array,
+    placeholder: PropTypes.string,
 }
 
 TagInput.defaultProps = {
     placeholder: 'Type something and hit enter...',
-    listItems: ['Bruce Lee', 'Royce Gracie'],
 }
 
 export default TagInput;
