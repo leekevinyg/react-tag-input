@@ -1,6 +1,6 @@
 # React Tag Input 
 
-A simple react tag input component built using styled components that is suitable for deployment to a npm registry.
+A simple (but fully customizable) react tag input component built using styled components that is suitable for deployment to a npm registry.
 
 To start up a dev env that runs the example react app utilizing the component: 
 
