@@ -1,8 +1,10 @@
-import React from "react";
+import React, { Fragment } from "react";
 import { TagInput } from "../lib";
 
 const App = () => (
-  <TagInput />
+  <Fragment>
+      <TagInput />
+  </Fragment>
 );
 
 export default App;

@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import PropTypes from 'prop-types';
+import styled from 'styled-components'
 import Wrapper from './styled/Wrapper';
 import Tag from './styled/Tag';
 import Input from './styled/Input';
@@ -72,17 +73,30 @@ class TagInput extends Component {
     }
 
     render () {
+        const { wrapperStyle, inputStyle } = this.props;
+
+        const InputWrapper = wrapperStyle ? styled(Wrapper)`
+            ${wrapperStyle}
+        ` : Wrapper;
+
+        const InputComponent = inputStyle ? styled(Input)`
+            ${inputStyle}
+        ` : Input;
+
         return (
-            <Wrapper onClick={this.onWrapperClick}>
+            <InputWrapper onClick={this.onWrapperClick}>
                 {this.renderTags()}
-                <Input ref={el => this.input = el} placeholder={this.renderPlaceholder()} type="text" />
-            </Wrapper>
+                <InputComponent ref={el => this.input = el} placeholder={this.renderPlaceholder()} type="text" />
+            </InputWrapper>
         )
     }
 }
 
 TagInput.propTypes = {
     placeholder: PropTypes.string,
+    wrapperStyle: PropTypes.string,
+    inputStyle: PropTypes.string,
+    tagStyle: PropTypes.string,
 }
 
 TagInput.defaultProps = {
