@@ -86,7 +86,7 @@ A boolean flag to control whether hitting the enter will will add a tag into the
 
 # Contributing
 
-To start up a dev env that runs the example react app utilizing the component: 
+To start up a dev env that runs the example react app utilizing the component, checkout the project from the github homepage and run:
 
 * ``` npm install ``` 
 * ``` npm start ```
@@ -101,4 +101,4 @@ To build for an npm registry:
 
 * ``` npm run build ```. 
 
-When this command is run, contents in the ```src/lib``` will be bundled and outputted to the ```dist``` folder. This folder can then be deployed to an npm registry of your choice.
+When this command is run, contents in the ```src/lib``` will be bundled and outputted to the ```dist``` folder.
