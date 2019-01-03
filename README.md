@@ -65,3 +65,12 @@ A js template string to be used to override the default component tag styles. Th
   `}/>
 
 ```
+
+* **addTagOnEnterKeyPress**
+
+A boolean flag to control whether hitting the enter will will add a tag into the input. Defaults to true.
+
+```
+  <TagInput addTagOnEnterKeyPress={false} />
+
+```
