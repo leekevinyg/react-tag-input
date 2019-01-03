@@ -1,3 +1,7 @@
+# React Tag Input 
+
+A simple (but fully customizable) react tag input component built using styled components.
+
 # Demo
 
 https://leekevinyg.github.io/react-tag-input/.
@@ -6,28 +10,7 @@ https://leekevinyg.github.io/react-tag-input/.
 
 ```npm -i reactjs-tag-input```
 
-# React Tag Input 
-
-A simple (but fully customizable) react tag input component built using styled components.
-
-To start up a dev env that runs the example react app utilizing the component: 
-
-* ``` npm install ``` 
-* ``` npm start ```
-
-To build the example app: 
-
-* ``` npm run build-examples ``` 
-
-The output of the above command is what is running at https://leekevinyg.github.io/react-tag-input/.
-
-To build for an npm registry: 
-
-* ``` npm run build ```. 
-
-When this command is run, contents in the ```src/lib``` will be bundled and outputted to the ```dist``` folder. This folder can then be deployed to an npm registry of your choice.
-
-# API
+# Usage and API
 
 This component exposes the following props to allow for customization:
 
@@ -99,3 +82,23 @@ A boolean flag to control whether hitting the enter will will add a tag into the
   <TagInput addTagOnEnterKeyPress={false} />
 
 ```
+
+
+# Contributing
+
+To start up a dev env that runs the example react app utilizing the component: 
+
+* ``` npm install ``` 
+* ``` npm start ```
+
+To build the example app: 
+
+* ``` npm run build-examples ``` 
+
+The output of the above command is what is running at https://leekevinyg.github.io/react-tag-input/.
+
+To build for an npm registry: 
+
+* ``` npm run build ```. 
+
+When this command is run, contents in the ```src/lib``` will be bundled and outputted to the ```dist``` folder. This folder can then be deployed to an npm registry of your choice.
