@@ -23,7 +23,7 @@ To build for an npm registry:
 
 When this command is run, contents in the ```src/lib``` will be bundled and outputted to the ```dist``` folder. This folder can then be deployed to an npm registry of your choice.
 
-# Component Interface
+# API
 
 This component exposes the following props to allow for customization:
 
@@ -63,5 +63,26 @@ A js template string to be used to override the default component tag styles. Th
   <TagInput tagStyle={`
     background: red;
   `}/>
+
+```
+
+* **tagDeleteStyle**
+
+A js template string to be used to override the default component that is rendered next to each tag for deletion purposes. The example below will override the tag ```font-size``` property. The template string can be anything that you would normally pass down as a [styled-component](https://www.styled-components.com/docs/basics#getting-started "Styled Component") configuration.
+
+```
+  <TagInput tagDeleteStyle={`
+    font-size: 0.5em;
+  `}/>
+
+```
+
+* **tagDeleteIcon**
+
+A react component that will be rendered next to each tag to allow for the deletion of it. Defaults to ' x'.
+
+```
+  import CustomTagDeleteIcon from './assets/TagDeleteIcon.png';
+  <TagInput tagDeleteIcon={CustomTagDeleteIcon}
 
 ```
