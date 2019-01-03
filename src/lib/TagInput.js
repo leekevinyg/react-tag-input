@@ -4,6 +4,7 @@ import styled from 'styled-components'
 import Wrapper from './styled/Wrapper';
 import Tag from './styled/Tag';
 import Input from './styled/Input';
+import TagDelete from './styled/TagDelete';
 
 class TagInput extends Component {
     constructor(props) {
@@ -15,6 +16,7 @@ class TagInput extends Component {
         this.onInputKeyUp = this.onInputKeyUp.bind(this);
         this.onInputKeyDown = this.onInputKeyDown.bind(this);
         this.focusInput = this.focusInput.bind(this);
+        this.removeTag = this.removeTag.bind(this);
         this.input = React.createRef();
     }
 
@@ -34,8 +36,10 @@ class TagInput extends Component {
         const addTag = () => {
             this.setState((state) => ({
                 selectedTags: [
-                    ...state.selectedTags,
-                    e.target.value,
+                    ...state.selectedTags, {
+                        index: state.selectedTags.length + 1,
+                        displayValue: e.target.value,
+                    },
                 ]
             }), () => this.clearInput());
         }
@@ -65,12 +69,26 @@ class TagInput extends Component {
         this.input.focus();
     }
 
+    removeTag (index) {
+        this.setState((state) => ({
+            selectedTags: state.selectedTags.filter(tag => tag.index !== index),
+        }));
+    }
+
     renderTags () {
         const { selectedTags } = this.state;
         const TagComponent = this.getTagStyledComponent();
+        const Delete = this.getTagDeleteComponent();
+        const DeleteIcon = this.getDeleteIcon();
 
-        return selectedTags.length > 0 ? selectedTags.map((tag, index) =>
-            <TagComponent key={index}>{tag}</TagComponent>) : null;
+        return selectedTags.length > 0 ?
+            selectedTags.map((tag, index) =>
+                <TagComponent key={index}>
+                    {tag.displayValue}
+                    <Delete onClick={() => this.removeTag(tag.index)}>{DeleteIcon}</Delete>
+                </TagComponent>
+            ) :
+            null;
     }
 
     renderPlaceholder () {
@@ -78,6 +96,19 @@ class TagInput extends Component {
         const { placeholder } = this.props;
 
         return selectedTags.length > 0 ? null : placeholder;
+    }
+
+    getDeleteIcon () {
+        const { tagDeleteIcon } = this.props;
+        return tagDeleteIcon || ' x';
+    }
+
+    getTagDeleteComponent () {
+        const { tagDeleteStyle } = this.props;
+
+        return tagDeleteStyle ? styled(TagDelete)`
+            ${tagDeleteStyle}
+        ` : TagDelete;
     }
 
     getTagStyledComponent () {
@@ -122,6 +153,8 @@ TagInput.propTypes = {
     wrapperStyle: PropTypes.string,
     inputStyle: PropTypes.string,
     tagStyle: PropTypes.string,
+    tagDeleteStyle: PropTypes.string,
+    tagDeleteIcon: PropTypes.element,
 }
 
 TagInput.defaultProps = {
