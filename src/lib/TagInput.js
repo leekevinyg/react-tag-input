@@ -31,6 +31,7 @@ class TagInput extends Component {
     }
 
     onInputKeyUp (e) {
+        const { addTagOnEnterKeyPressed } = this.props;
         const inputValue = e.target.value;
         const inputNotEmpty = inputValue && inputValue.trim() !== '';
         const addTag = () => {
@@ -44,7 +45,7 @@ class TagInput extends Component {
             }), () => this.clearInput());
         }
 
-        if (e.key === 'Enter' && inputNotEmpty) {
+        if (e.key === 'Enter' && inputNotEmpty && addTagOnEnterKeyPressed) {
             addTag();
         }
     }
@@ -155,10 +156,12 @@ TagInput.propTypes = {
     tagStyle: PropTypes.string,
     tagDeleteStyle: PropTypes.string,
     tagDeleteIcon: PropTypes.element,
+    addTagOnEnterKeyPressed: PropTypes.bool,
 }
 
 TagInput.defaultProps = {
     placeholder: 'Type something and hit enter...',
+    addTagOnEnterKeyPressed: true,
 }
 
 export default TagInput;
