@@ -17,18 +17,18 @@ https://leekevinyg.github.io/react-tag-input/.
 import TagInput from 'reactjs-tag-input'
 
 class Example extends React.Component {
-  constructor() {
-    super()
-    this.state = {tags: []}
-  }
+    constructor(props) {
+        super(props);
+        this.state = {tags: []}
+    }
 
-  handleChange(tags) {
-    this.setState({tags})
-  }
+    handleChange(tags) {
+      this.setState({tags})
+    }
 
-  render() {
-    return <TagInput tags={this.state.tags} onTagsChanged={() => this.handleChange} />
-  }
+    render() {
+      return <TagInput tags={this.state.tags} onTagsChanged={() => this.handleChange} />
+    }
 }
 
 ```
@@ -39,34 +39,11 @@ This component exposes the following props:
 
 * **tags (required)**
 
-An array of tags to be rendered in the input
+An array of tags to be rendered in the input.
 
 * **handleTagsChanged (required)**
 
 A function that gets called when tags are added or deleted in the input. The function gets the new tag array as it's argument.
-
-* **hideInputPlaceholderTextIfTagsPresent**
-
-A boolean flag to indicate whether the input placeholdr text should be hidden if there are tags present. Defaults to true.
-
-* **tagDeleteIcon**
-
-A react component that will be rendered next to each tag to allow for the deletion of it. Defaults to ' x'.
-
-```
-  import CustomTagDeleteIcon from './assets/TagDeleteIcon.png';
-  <TagInput tagDeleteIcon={CustomTagDeleteIcon}
-
-```
-
-* **addTagOnEnterKeyPress**
-
-A boolean flag to control whether hitting the enter will will add a tag into the input. Defaults to true.
-
-```
-  <TagInput addTagOnEnterKeyPress={false} />
-
-```
 
 * **wrapperStyle**
 
@@ -115,6 +92,29 @@ A js template string to be used to override the default component that is render
   <TagInput tagDeleteStyle={`
     font-size: 0.5em;
   `}/>
+
+```
+
+* **hideInputPlaceholderTextIfTagsPresent**
+
+A boolean flag to indicate whether the input placeholder text should be hidden if there are tags present. Defaults to true.
+
+* **tagDeleteIcon**
+
+A react component that will be rendered next to each tag to allow for the deletion of it. Defaults to ' x'.
+
+```
+  import CustomTagDeleteIcon from './assets/TagDeleteIcon.png';
+  <TagInput tagDeleteIcon={CustomTagDeleteIcon}
+
+```
+
+* **addTagOnEnterKeyPress**
+
+A boolean flag to control whether hitting the enter will will add a tag into the input. Defaults to true.
+
+```
+  <TagInput addTagOnEnterKeyPress={false} />
 
 ```
 
