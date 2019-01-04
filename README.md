@@ -8,7 +8,7 @@ https://leekevinyg.github.io/react-tag-input/.
 
 # Installation
 
-```npm -i reactjs-tag-input --save```
+```npm install reactjs-tag-input --save```
 
 # Usage
 
