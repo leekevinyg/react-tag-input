@@ -10,11 +10,11 @@ https://leekevinyg.github.io/react-tag-input/.
 
 ```npm -i reactjs-tag-input --save```
 
-# Example
+# Usage
 
 ```
 
-import TagInput from 'reactjs-tag-input'
+import { TagInput } from 'reactjs-tag-input'
 
 class Example extends React.Component {
     constructor(props) {
@@ -33,7 +33,7 @@ class Example extends React.Component {
 
 ```
 
-# Usage and API
+# API
 
 This component exposes the following props:
 
