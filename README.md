@@ -120,7 +120,7 @@ A boolean flag to control whether hitting the enter will will add a tag into the
 
 # Contributing
 
-To start up a dev env that runs the example react app utilizing the component, checkout the project from the github homepage and run:
+To start up a dev env that runs the example react app utilizing the component, checkout the project from the [github homepage](https://github.com/leekevinyg/react-tag-input) and run:
 
 * ``` npm install ``` 
 * ``` npm start ```
