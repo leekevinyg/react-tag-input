@@ -23,7 +23,7 @@ class Example extends React.Component {
     }
 
     handleChange(tags) {
-      this.setState({tags})
+        this.setState({tags})
     }
 
     render() {
