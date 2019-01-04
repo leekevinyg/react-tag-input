@@ -21,6 +21,20 @@ class TagInput extends Component {
     }
 
     componentDidMount () {
+        const { tags } = this.props;
+        const propTags = tags.map((tag, index) => {
+            return {
+                index,
+                displayValue: tag,
+            }
+        });
+
+        this.setState((state) => ({
+            selectedTags: [
+                ...state.selectedTags,
+                ...propTags,
+            ]
+        }));
         this.input.addEventListener('keyup', this.onInputKeyUp);
         this.input.addEventListener('keydown', this.onInputKeyDown);
     }
@@ -31,7 +45,7 @@ class TagInput extends Component {
     }
 
     onInputKeyUp (e) {
-        const { addTagOnEnterKeyPressed } = this.props;
+        const { addTagOnEnterKeyPressed, onTagsChanged} = this.props;
         const inputValue = e.target.value;
         const inputNotEmpty = inputValue && inputValue.trim() !== '';
         const addTag = () => {
@@ -42,7 +56,12 @@ class TagInput extends Component {
                         displayValue: e.target.value,
                     },
                 ]
-            }), () => this.clearInput());
+            }), () => {
+                const { selectedTags } = this.state;
+
+                this.clearInput();
+                onTagsChanged(selectedTags.map(tag => tag.displayValue));
+            });
         }
 
         if (e.key === 'Enter' && inputNotEmpty && addTagOnEnterKeyPressed) {
@@ -51,10 +70,14 @@ class TagInput extends Component {
     }
 
     onInputKeyDown (e) {
+        const { onTagsChanged } = this.props;
         const deleteLastTag = () => {
             this.setState((state) => ({
                 selectedTags: state.selectedTags.splice(0, state.selectedTags.length - 1),
-            }));
+            }), () => {
+                const { selectedTags } = this.state;
+                onTagsChanged(selectedTags.map(tag => tag.displayValue));
+            });
         };
 
         if (e.key === 'Backspace' && e.target.selectionStart === 0) {
@@ -73,7 +96,11 @@ class TagInput extends Component {
     removeTag (index) {
         this.setState((state) => ({
             selectedTags: state.selectedTags.filter(tag => tag.index !== index),
-        }));
+        }),  () => {
+            const { selectedTags } = this.state;
+            const { onTagsChanged } = this.props;
+            onTagsChanged(selectedTags.map(tag => tag.displayValue));
+        });
     }
 
     renderTags () {
@@ -94,9 +121,9 @@ class TagInput extends Component {
 
     renderPlaceholder () {
         const { selectedTags } = this.state;
-        const { placeholder } = this.props;
+        const { placeholder, hideInputPlaceholderTextIfTagsPresent } = this.props;
 
-        return selectedTags.length > 0 ? null : placeholder;
+        return hideInputPlaceholderTextIfTagsPresent && selectedTags.length > 0 ? null : placeholder;
     }
 
     getDeleteIcon () {
@@ -150,6 +177,8 @@ class TagInput extends Component {
 }
 
 TagInput.propTypes = {
+    tags: PropTypes.array.isRequired,
+    onTagsChanged: PropTypes.func.isRequired,
     placeholder: PropTypes.string,
     wrapperStyle: PropTypes.string,
     inputStyle: PropTypes.string,
@@ -157,11 +186,13 @@ TagInput.propTypes = {
     tagDeleteStyle: PropTypes.string,
     tagDeleteIcon: PropTypes.element,
     addTagOnEnterKeyPressed: PropTypes.bool,
+    hideInputPlaceholderTextIfTagsPresent: PropTypes.bool,
 }
 
 TagInput.defaultProps = {
     placeholder: 'Type something and hit enter...',
     addTagOnEnterKeyPressed: true,
+    hideInputPlaceholderTextIfTagsPresent: true,
 }
 
 export default TagInput;
