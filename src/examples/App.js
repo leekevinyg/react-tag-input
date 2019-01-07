@@ -1,30 +1,53 @@
 import React, { Fragment } from "react";
-import styled from 'styled-components'
+import styled from 'styled-components';
 import { TagInput } from "../lib";
 
 const exampleTags = ['Bruce Lee', 'Royce Gracie'];
 const onTagsChanged = (newTags) => {
     console.log(`tags changed to: ${newTags}`)
 };
-const GithubLink = styled.a`
-    font-family: 'Hind', sans-serif;
-    box-shadow: 0 5px 5px rgba(182, 182, 182, 0.75);
-    text-transform: uppercase;
-    text-decoration: none;
-    font-size: 40px;
-    text-align: center;
+
+const GithubRibbon = styled.div`
     position: absolute;
-    width: 100%;
-    top: 0;
-    left: 0;
-    background: black;
-    color: white;
-`
+    font-family: 'Hind', sans-serif;
+    font-size: 20px;
+    top:-35px;
+    right:-114px;
+    padding: 1px 0;
+
+    transform-origin: top left;
+    transform: rotate(45deg);
+
+    background-color: black;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.00)), to(rgba(0, 0, 0, 0.15)));
+    background-image: -webkit-linear-gradient(bottom, rgba(0, 0, 0, 0.25), transparent);
+    background-image: -moz-linear-gradient(bottom, rgba(0, 0, 0, 0.25), transparent);
+    background-image: -o-linear-gradient(bottom, rgba(0, 0, 0, 0.25), transparent);
+    background-image: -ms-linear-gradient(bottom, rgba(0, 0, 0, 0.25), transparent);
+    background-image: linear-gradient(bottom, rgba(0, 0, 0, 0.25), transparent);
+    filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr='#000000', EndColorStr='#000000');
+`;
+
+const GithubRibbonLink = styled.a`
+    display: inline-block;
+    width: 250px;
+    color: #fff;
+    font-size: 0.8em;
+    letter-spacing: 0.06em;
+    text-shadow: 0 -1px #777;
+    text-decoration: none;
+    text-align: center;
+    line-height: 30px;
+`;
 
 const App = () => (
     <Fragment>
         <TagInput tags={exampleTags} onTagsChanged={onTagsChanged} />
-        <GithubLink href="https://github.com/leekevinyg/react-tag-input">Fork me on github</GithubLink>
+        <GithubRibbon>
+            <GithubRibbonLink href="https://github.com/leekevinyg/react-tag-input">
+                Fork me on github
+            </GithubRibbonLink>
+        </GithubRibbon>
     </Fragment>
 );
 
