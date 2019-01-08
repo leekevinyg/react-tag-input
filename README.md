@@ -20,18 +20,21 @@ class Example extends React.Component {
     constructor(props) {
         super(props);
         this.state = {tags: []}
+        this.handleTagsChanged = this.handleTagsChanged.bind(this);
     }
 
-    handleChange(tags) {
+    handleTagsChanged(tags) {
         this.setState({tags})
     }
 
     render() {
-        return <TagInput tags={this.state.tags} onTagsChanged={() => this.handleChange} />
+        return <TagInput tags={this.state.tags} handleTagsChanged={this.handleTagsChanged} />
     }
 }
 
 ```
+
+An example with pre-rendered tags can be found [here](https://github.com/leekevinyg/react-tag-input/blob/master/src/examples/App.js)
 
 # API
 
@@ -39,11 +42,15 @@ This component exposes the following props:
 
 * **tags (required)**
 
-An array of tags to be rendered in the input.
+An array of tags to be rendered in the input. If not empty, this must be an array of js objects. The objects are required to have a ```displayValue``` property specifying what should be displayed in the tag input to represent the item.
 
 * **handleTagsChanged (required)**
 
 A function that gets called when tags are added or deleted in the input. The function gets the new tag array as it's argument.
+
+* **onInputChange**
+
+A function that gets passed to the internal input ```onChange``` attribute.
 
 * **wrapperStyle**
 

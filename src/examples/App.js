@@ -2,10 +2,21 @@ import React, { Fragment } from "react";
 import styled from 'styled-components';
 import { TagInput } from "../lib";
 
-const exampleTags = ['Bruce Lee', 'Royce Gracie'];
+const exampleTags = [{
+    id: 1,
+    displayValue: 'Bruce Lee',
+ }, {
+    id: 2,
+    displayValue: 'Royce Gracie',
+ }];
+
 const onTagsChanged = (newTags) => {
-    console.log(`tags changed to: ${newTags}`)
+    console.log('tags changed to: ', newTags);
 };
+
+const onInputChanged = (e) => {
+    console.log(`input value is now: ${e.target.value}`);
+}
 
 const GithubRibbon = styled.div`
     position: absolute;
@@ -32,7 +43,7 @@ const GithubRibbonLink = styled.a`
 
 const App = () => (
     <Fragment>
-        <TagInput tags={exampleTags} onTagsChanged={onTagsChanged} />
+        <TagInput tags={exampleTags} onTagsChanged={onTagsChanged} onInputChanged={onInputChanged}/>
         <GithubRibbon>
             <GithubRibbonLink href="https://github.com/leekevinyg/react-tag-input">
                 Fork me on github

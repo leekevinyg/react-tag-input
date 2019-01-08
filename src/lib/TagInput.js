@@ -25,7 +25,7 @@ class TagInput extends Component {
         const propTags = tags.map((tag, index) => {
             return {
                 index,
-                displayValue: tag,
+                ...tag,
             }
         });
 
@@ -60,7 +60,7 @@ class TagInput extends Component {
                 const { selectedTags } = this.state;
 
                 this.clearInput();
-                onTagsChanged(selectedTags.map(tag => tag.displayValue));
+                onTagsChanged(selectedTags);
             });
         }
 
@@ -76,7 +76,7 @@ class TagInput extends Component {
                 selectedTags: state.selectedTags.splice(0, state.selectedTags.length - 1),
             }), () => {
                 const { selectedTags } = this.state;
-                onTagsChanged(selectedTags.map(tag => tag.displayValue));
+                onTagsChanged(selectedTags);
             });
         };
 
@@ -99,7 +99,7 @@ class TagInput extends Component {
         }),  () => {
             const { selectedTags } = this.state;
             const { onTagsChanged } = this.props;
-            onTagsChanged(selectedTags.map(tag => tag.displayValue));
+            onTagsChanged(selectedTags);
         });
     }
 
@@ -164,13 +164,14 @@ class TagInput extends Component {
     }
 
     render () {
+        const { onInputChanged } = this.props;
         const InputWrapper = this.getInputWrapperStyledComponent();
         const InputComponent = this.getInputStyledComponent();
 
         return (
             <InputWrapper onClick={this.focusInput}>
                 {this.renderTags()}
-                <InputComponent ref={el => this.input = el} placeholder={this.renderPlaceholder()} type="text" />
+                <InputComponent ref={el => this.input = el} onChange={onInputChanged} placeholder={this.renderPlaceholder()} type="text" />
             </InputWrapper>
         );
     }
@@ -179,6 +180,7 @@ class TagInput extends Component {
 TagInput.propTypes = {
     tags: PropTypes.array.isRequired,
     onTagsChanged: PropTypes.func.isRequired,
+    onInputChange: PropTypes.func,
     placeholder: PropTypes.string,
     wrapperStyle: PropTypes.string,
     inputStyle: PropTypes.string,
