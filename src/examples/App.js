@@ -13,19 +13,9 @@ const GithubRibbon = styled.div`
     font-size: 20px;
     top:-35px;
     right:-114px;
-    padding: 1px 0;
-
     transform-origin: top left;
     transform: rotate(45deg);
-
     background-color: black;
-    background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.00)), to(rgba(0, 0, 0, 0.15)));
-    background-image: -webkit-linear-gradient(bottom, rgba(0, 0, 0, 0.25), transparent);
-    background-image: -moz-linear-gradient(bottom, rgba(0, 0, 0, 0.25), transparent);
-    background-image: -o-linear-gradient(bottom, rgba(0, 0, 0, 0.25), transparent);
-    background-image: -ms-linear-gradient(bottom, rgba(0, 0, 0, 0.25), transparent);
-    background-image: linear-gradient(bottom, rgba(0, 0, 0, 0.25), transparent);
-    filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr='#000000', EndColorStr='#000000');
 `;
 
 const GithubRibbonLink = styled.a`
