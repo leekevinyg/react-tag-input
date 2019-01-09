@@ -26,7 +26,7 @@ const GithubRibbon = styled.div`
     right:-114px;
     transform-origin: top left;
     transform: rotate(45deg);
-    background-color: black;
+    background-color: #37393A;
 `;
 
 const GithubRibbonLink = styled.a`
@@ -35,7 +35,6 @@ const GithubRibbonLink = styled.a`
     color: #fff;
     font-size: 0.8em;
     letter-spacing: 0.06em;
-    text-shadow: 0 -1px #777;
     text-decoration: none;
     text-align: center;
     line-height: 30px;

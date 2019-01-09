@@ -34,7 +34,7 @@ class Example extends React.Component {
 
 ```
 
-An example with pre-rendered tags can be found [here](https://github.com/leekevinyg/react-tag-input/blob/master/src/examples/App.js)
+An example with pre-rendered tags can be found [here](https://github.com/leekevinyg/react-tag-input/blob/master/src/examples/App.js).
 
 # API
 
