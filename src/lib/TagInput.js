@@ -37,6 +37,7 @@ class TagInput extends Component {
         }));
         this.input.addEventListener('keyup', this.onInputKeyUp);
         this.input.addEventListener('keydown', this.onInputKeyDown);
+        this.focusInput();
     }
 
     componentWillUnmount () {

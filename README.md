@@ -112,7 +112,7 @@ A react component that will be rendered next to each tag to allow for the deleti
 
 ```
   import CustomTagDeleteIcon from './assets/TagDeleteIcon.png';
-  <TagInput tagDeleteIcon={CustomTagDeleteIcon}
+  <TagInput tagDeleteIcon={CustomTagDeleteIcon} />
 
 ```
 
