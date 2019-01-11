@@ -9,4 +9,4 @@ script:
   - npm run build
 after_script:
   - npm run coverage
-  - npm install coveralls && cat ./coverage/lcov.info | coveralls
+  - npm i coveralls && cat ./coverage/lcov.info | coveralls
