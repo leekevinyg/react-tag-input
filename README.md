@@ -1,5 +1,8 @@
 # React Tag Input 
 
+[![Build Status](https://travis-ci.com/leekevinyg/react-tag-input.svg?branch=master)](https://travis-ci.com/leekevinyg/react-tag-input)
+
+
 A simple (but fully customizable) react tag input component built using styled components.
 
 # Demo
