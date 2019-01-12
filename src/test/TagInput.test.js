@@ -46,8 +46,6 @@ describe('<TagInput />', () => {
     });
 
     it('removes a tag when backspace is pressed', () => {
-        const onInputKeyUpSpy = jest.spyOn(TagInput.prototype, 'onInputKeyUp');
-
         wrapper = mount(<TagInput {...props} />);
         const input = wrapper.find('input');
         input.simulate('keydown', {
