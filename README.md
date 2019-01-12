@@ -4,6 +4,7 @@ A simple (but fully customizable) react tag input component built using styled c
 
 [![Build Status](https://travis-ci.com/leekevinyg/react-tag-input.svg?branch=master)](https://travis-ci.com/leekevinyg/react-tag-input)
 [![Coverage Status](https://coveralls.io/repos/github/leekevinyg/react-tag-input/badge.svg?branch=master)](https://coveralls.io/github/leekevinyg/react-tag-input?branch=master)
+[![npm version](https://badge.fury.io/js/reactjs-tag-input.svg)](https://badge.fury.io/js/reactjs-tag-input)
 
 # Demo
 
