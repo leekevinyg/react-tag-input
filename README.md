@@ -8,7 +8,7 @@ A simple (but fully customizable) react tag input component built using styled c
 
 # Demo
 
-![](example.gif)
+![](https://github.com/leekevinyg/react-tag-input/blob/master/example.gif?raw=true)
 
 [Interactive Demo](https://leekevinyg.github.io/react-tag-input/)
 
@@ -142,10 +142,10 @@ To build the example app:
 
 * ``` npm run build-examples ``` 
 
-The output of the above command is what is running at https://leekevinyg.github.io/react-tag-input/.
+The output of the above command is what is running at the [interactive demo](https://leekevinyg.github.io/react-tag-input/).
 
 To build for an npm registry: 
 
 * ``` npm run build ```. 
 
-When this command is run, contents in the ```src/lib``` will be bundled and outputted to the ```dist``` folder.
+When this command is run, contents in the ```src/lib``` will be bundled and outputted to the ```dist``` folder, which can be deployed to an npm registry of your choice.
