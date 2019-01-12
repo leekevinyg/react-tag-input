@@ -10,7 +10,7 @@ A simple (but fully customizable) react tag input component built using styled c
 
 ![](example.gif)
 
-[Interactive Demo](https://leekevinyg.github.io/react-tag-input/).
+[Interactive Demo](https://leekevinyg.github.io/react-tag-input/)
 
 # Installation
 
