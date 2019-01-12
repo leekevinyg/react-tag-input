@@ -26,4 +26,33 @@ describe('<TagInput />', () => {
         wrapper.instance().componentDidMount();
         expect(focusInputSpy).toHaveBeenCalled();
     });
+
+    it('deletes a tag when x is pressed', () => {
+        wrapper = mount(<TagInput {...props} />);
+        wrapper.find('[data-test="tag-delete-0"]').simulate("click");
+        expect(wrapper.state().selectedTags.length).toBe(1);
+    });
+
+    it('adds a tag when enter is pressed', () => {
+        wrapper = mount(<TagInput {...props} />);
+        const input = wrapper.find('input');
+        input.simulate('keyup', {
+            key: 'Enter',
+            target: {
+                value: 'Angela Lee',
+            },
+        });
+        expect(wrapper.state().selectedTags.length).toBe(3);
+    });
+
+    it('removes a tag when backspace is pressed', () => {
+        const onInputKeyUpSpy = jest.spyOn(TagInput.prototype, 'onInputKeyUp');
+
+        wrapper = mount(<TagInput {...props} />);
+        const input = wrapper.find('input');
+        input.simulate('keydown', {
+            key: 'Backspace',
+        });
+        expect(wrapper.state().selectedTags.length).toBe(1);
+    });
 });

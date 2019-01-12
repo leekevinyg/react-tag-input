@@ -35,14 +35,7 @@ class TagInput extends Component {
                 ...propTags,
             ]
         }));
-        this.input.addEventListener('keyup', this.onInputKeyUp);
-        this.input.addEventListener('keydown', this.onInputKeyDown);
         this.focusInput();
-    }
-
-    componentWillUnmount () {
-        this.input.removeEventListener('keyup', this.onInputKeyUp);
-        this.input.removeEventListener('keydown', this.onInputKeyDown);
     }
 
     onInputKeyUp (e) {
@@ -54,7 +47,7 @@ class TagInput extends Component {
                 selectedTags: [
                     ...state.selectedTags, {
                         index: state.selectedTags.length + 1,
-                        displayValue: e.target.value,
+                        displayValue: inputValue,
                     },
                 ]
             }), () => {
@@ -114,7 +107,7 @@ class TagInput extends Component {
             selectedTags.map((tag, index) =>
                 <TagComponent key={index}>
                     {tag.displayValue}
-                    <Delete onClick={() => this.removeTag(tag.index)}>{DeleteIcon}</Delete>
+                    <Delete index={tag.index} onClick={() => this.removeTag(tag.index)}>{DeleteIcon}</Delete>
                 </TagComponent>
             ) :
             null;
@@ -172,7 +165,13 @@ class TagInput extends Component {
         return (
             <InputWrapper onClick={this.focusInput}>
                 {this.renderTags()}
-                <InputComponent ref={el => this.input = el} onChange={onInputChanged} placeholder={this.renderPlaceholder()} type="text" />
+                <InputComponent 
+                    ref={el => this.input = el} 
+                    onChange={onInputChanged} 
+                    placeholder={this.renderPlaceholder()} 
+                    type="text" 
+                    onKeyUp={this.onInputKeyUp}
+                    onKeyDown={this.onInputKeyDown}/>
             </InputWrapper>
         );
     }
