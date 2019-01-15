@@ -26,17 +26,19 @@ class Example extends React.Component {
     constructor(props) {
         super(props);
         this.state = {tags: []}
-        this.handleTagsChanged = this.handleTagsChanged.bind(this);
+        this.onTagsChanged = this.onTagsChanged.bind(this);
     }
 
-    handleTagsChanged(tags) {
+    onTagsChanged(tags) {
         this.setState({tags})
     }
 
     render() {
-        return <TagInput tags={this.state.tags} handleTagsChanged={this.handleTagsChanged} />
+        return <TagInput tags={this.state.tags} onTagsChanged={this.onTagsChanged} />
     }
 }
+
+export default App;
 
 ```
 
@@ -50,7 +52,7 @@ This component exposes the following props:
 
 An array of tags to be rendered in the input. If not empty, this must be an array of js objects. The objects are required to have a ```displayValue``` property specifying what should be displayed in the tag input to represent the item.
 
-* **handleTagsChanged (required)**
+* **onTagsChanged (required)**
 
 A function that gets called when tags are added or deleted in the input. The function gets the new tag array as it's argument.
 
