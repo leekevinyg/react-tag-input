@@ -6,16 +6,24 @@ A simple (but fully customizable) react tag input component built using styled c
 [![Coverage Status](https://coveralls.io/repos/github/leekevinyg/react-tag-input/badge.svg?branch=master)](https://coveralls.io/github/leekevinyg/react-tag-input?branch=master)
 [![npm version](https://badge.fury.io/js/reactjs-tag-input.svg)](https://badge.fury.io/js/reactjs-tag-input)
 
+- <a href="#Demo">Demo</a>
+- <a href="#Installation">Installation</a>
+- <a href="#Usage">Usage</a>
+- <a href="#API">API</a>
+
+<a name="Demo"></a>
 # Demo
 
 [![example](https://github.com/leekevinyg/react-tag-input/blob/master/example.gif?raw=true)](https://leekevinyg.github.io/react-tag-input/)
 
 [Interactive Demo](https://leekevinyg.github.io/react-tag-input/)
 
+<a name="Installation"></a>
 # Installation
 
 ```npm i reactjs-tag-input --save```
 
+<a name="Usage"></a>
 # Usage
 
 ```
@@ -42,6 +50,7 @@ class Example extends React.Component {
 
 An example with pre-rendered tags can be found [here](https://github.com/leekevinyg/react-tag-input/blob/master/src/examples/App.js).
 
+<a name="API"></a>
 # API
 
 This component exposes the following props:
