@@ -139,6 +139,13 @@ A boolean flag to control whether hitting the enter will will add a tag into the
   <TagInput addTagOnEnterKeyPress={false} />
 
 ```
+* **placeholder**
+
+Defaults to "Type something and hit enter...", but can be overridden with this prop
+
+```
+  <TagInput placeholder="Hello world" />
+```
 
 # Contributing
 
