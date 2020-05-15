@@ -164,4 +164,4 @@ To build for an npm registry:
 
 * ``` npm run build ```. 
 
-When this command is run, contents in the ```src/lib``` will be bundled and outputted to the ```dist``` folder, which can be deployed to an npm registry of your choice.
+When this command is run from ```src/lib```, contents in the ```src/lib``` folder will be bundled and outputted to the ```dist``` folder, which can be deployed to an npm registry of your choice.
