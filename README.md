@@ -63,7 +63,7 @@ An array of tags to be rendered in the input. If not empty, this must be an arra
 
 A function that gets called when tags are added or deleted in the input. The function gets the new tag array as it's argument.
 
-* **onInputChange**
+* **onInputChanged**
 
 A function that gets passed to the internal input ```onChange``` attribute.
 
